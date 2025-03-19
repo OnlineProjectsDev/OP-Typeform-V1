@@ -34,7 +34,7 @@ const QuestionRenderer = ({
           {options.map(option => (
             <div 
               key={option}
-              className={`border-2 rounded-xl p-6 text-center cursor-pointer transition-all hover:shadow-lg ${
+              className={`border-2 p-6 text-center cursor-pointer transition-all hover:shadow-lg ${
                 value === option 
                   ? "border-blue-600 bg-blue-50" 
                   : "border-gray-200 hover:border-blue-300"
@@ -54,7 +54,7 @@ const QuestionRenderer = ({
           value={value}
           onChange={handleChange}
           placeholder={placeholder}
-          className={`w-full p-4 text-xl border-2 rounded-xl ${error ? "border-red-500" : "border-gray-300"}`}
+          className={`w-full p-4 text-xl border-2 ${error ? "border-red-500" : "border-gray-300"}`}
           autoFocus
         />
       )}
@@ -66,7 +66,7 @@ const QuestionRenderer = ({
           value={value}
           onChange={handleChange}
           placeholder={placeholder}
-          className={`w-full p-4 text-xl border-2 rounded-xl ${error ? "border-red-500" : "border-gray-300"}`}
+          className={`w-full p-4 text-xl border-2 ${error ? "border-red-500" : "border-gray-300"}`}
           autoFocus
         />
       )}
@@ -77,7 +77,7 @@ const QuestionRenderer = ({
           value={value}
           onChange={handleChange}
           placeholder={placeholder}
-          className={`w-full p-4 text-xl border-2 rounded-xl ${error ? "border-red-500" : "border-gray-300"}`}
+          className={`w-full p-4 text-xl border-2 ${error ? "border-red-500" : "border-gray-300"}`}
           rows="4"
           autoFocus
         />
@@ -88,7 +88,7 @@ const QuestionRenderer = ({
           name={id}
           value={value}
           onChange={handleChange}
-          className={`w-full p-4 text-xl border-2 rounded-xl ${error ? "border-red-500" : "border-gray-300"}`}
+          className={`w-full p-4 text-xl border-2 ${error ? "border-red-500" : "border-gray-300"}`}
           autoFocus
         >
           <option value="">Select an option</option>
@@ -105,7 +105,7 @@ const QuestionRenderer = ({
           {options.map(option => (
             <div 
               key={option.value}
-              className={`border-2 rounded-xl p-4 cursor-pointer transition-all ${
+              className={`border-2 p-4 cursor-pointer transition-all ${
                 formData[id].includes(option.value) 
                   ? "border-blue-600 bg-blue-50" 
                   : "border-gray-200 hover:border-blue-300"
@@ -144,7 +144,7 @@ const QuestionRenderer = ({
       {type === "boolean" && (
         <div className="flex space-x-4">
           <div 
-            className={`flex-1 border-2 rounded-xl p-5 text-center cursor-pointer transition-all hover:shadow-lg ${
+            className={`flex-1 border-2 p-5 text-center cursor-pointer transition-all hover:shadow-lg ${
               value === "Yes" 
                 ? "border-blue-600 bg-blue-50" 
                 : "border-gray-200 hover:border-blue-300"
@@ -155,7 +155,7 @@ const QuestionRenderer = ({
           </div>
           
           <div 
-            className={`flex-1 border-2 rounded-xl p-5 text-center cursor-pointer transition-all hover:shadow-lg ${
+            className={`flex-1 border-2 p-5 text-center cursor-pointer transition-all hover:shadow-lg ${
               value === "No" 
                 ? "border-blue-600 bg-blue-50" 
                 : "border-gray-200 hover:border-blue-300"

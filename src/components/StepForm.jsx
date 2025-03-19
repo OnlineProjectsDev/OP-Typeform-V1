@@ -35,9 +35,9 @@ export default function StepForm() {
         ></div>
       </div>
       
-      <div className="flex-grow flex items-center justify-center p-4">
-        <div className="w-full max-w-3xl mx-auto">
-          <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+      <div className="flex-grow flex items-stretch justify-center p-4">
+        <div className="w-full mx-auto">
+          <div className="bg-white h-full border-1 p-8 md:p-12">
             {/* Question content */}
             <QuestionRenderer
               question={question}
@@ -56,7 +56,7 @@ export default function StepForm() {
             <div className="flex justify-between mt-8">
               <button 
                 onClick={prevQuestion}
-                className={`px-6 py-3 rounded-xl text-lg transition-all ${
+                className={`px-6 py-3 text-lg transition-all ${
                   currentQuestion === 0 
                     ? "opacity-0 cursor-default" 
                     : "bg-gray-200 hover:bg-gray-300"
@@ -68,16 +68,16 @@ export default function StepForm() {
               
               <button 
                 onClick={nextQuestion}
-                className="bg-blue-600 text-white px-6 py-3 rounded-xl text-lg hover:bg-blue-700 transition-all"
+                className="bg-blue-600 text-white px-6 py-3 text-lg hover:bg-blue-700 transition-all"
               >
                 {currentQuestion === getAllQuestions().length - 1 ? "Submit" : "Next →"}
               </button>
             </div>
             
             {/* Keyboard shortcuts hint */}
-            <div className="text-center text-gray-400 text-sm mt-6">
-              Press <kbd className="px-2 py-1 bg-gray-100 rounded">Enter ↵</kbd> to continue, 
-              <kbd className="px-2 py-1 bg-gray-100 rounded ml-2">Alt + Backspace</kbd> to go back
+            <div className="text-center text-gray-400 text-sm mt-6 absolute bottom-12 left-12">
+              Press <kbd className="px-2 py-1 bg-gray-100">Enter ↵</kbd> to continue, 
+              <kbd className="px-2 py-1 bg-gray-100 ml-2">Alt + Backspace</kbd> to go back
             </div>
           </div>
         </div>
