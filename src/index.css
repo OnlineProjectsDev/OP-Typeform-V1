@@ -1,1 +1,91 @@
 @import "tailwindcss";
+
+/* Custom Fonts */
+@font-face {
+  font-family: 'Delight';
+  src: url('../src/assets/fonts/Delight-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Delight';
+  src: url('../src/assets/fonts/Delight-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Delight';
+  src: url('../src/assets/fonts/Delight-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Delight';
+  src: url('../src/assets/fonts/Delight-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Delight';
+  src: url('../src/assets/fonts/Delight-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Delight';
+  src: url('../src/assets/fonts/Delight-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Delight';
+  src: url('../src/assets/fonts/Delight-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Delight';
+  src: url('../src/assets/fonts/Delight-Extrabold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Delight';
+  src: url('../src/assets/fonts/Delight-Extralight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Define CSS variables for your fonts */
+:root {
+  --font-custom: 'Delight', sans-serif;
+  --font-heading: 'Delight', serif;
+}
+
+/* Extend Tailwind's font family utilities using @layer */
+@layer utilities {
+  .font-custom {
+    font-family: var(--font-custom);
+  }
+  
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+}

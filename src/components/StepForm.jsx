@@ -26,18 +26,18 @@ export default function StepForm() {
   const question = getCurrentQuestion();
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-[#191919]">
       {/* Progress bar */}
       <div className="fixed top-0 left-0 right-0 h-1 bg-gray-200">
         <div 
-          className="h-full bg-blue-600 transition-all duration-300"
+          className="h-full bg-[#7a7a7a] transition-all duration-300"
           style={{ width: `${calculateProgress()}%` }}
         ></div>
       </div>
       
-      <div className="flex-grow flex items-stretch justify-center p-4">
-        <div className="w-full mx-auto">
-          <div className="bg-white h-full border-1 p-8 md:p-12">
+      <div className="main-container flex-grow flex justify-center">
+        <div className="w-full items-stretch mx-auto">
+          <div className=" p-8 h-full md:p-12">
             {/* Question content */}
             <QuestionRenderer
               question={question}
@@ -50,32 +50,15 @@ export default function StepForm() {
               handleServiceSelect={handleServiceSelect}
               handleCheckboxChange={handleCheckboxChange}
               handleBooleanSelect={handleBooleanSelect}
+              prevQuestion={prevQuestion}
+              nextQuestion={nextQuestion}
+              currentQuestion={currentQuestion}
+              totalQuestions={getAllQuestions().length}
+              className="text-white"
             />
             
-            {/* Navigation buttons */}
-            <div className="flex justify-between mt-8">
-              <button 
-                onClick={prevQuestion}
-                className={`px-6 py-3 text-lg transition-all ${
-                  currentQuestion === 0 
-                    ? "opacity-0 cursor-default" 
-                    : "bg-gray-200 hover:bg-gray-300"
-                }`}
-                disabled={currentQuestion === 0}
-              >
-                ← Back
-              </button>
-              
-              <button 
-                onClick={nextQuestion}
-                className="bg-blue-600 text-white px-6 py-3 text-lg hover:bg-blue-700 transition-all"
-              >
-                {currentQuestion === getAllQuestions().length - 1 ? "Submit" : "Next →"}
-              </button>
-            </div>
-            
             {/* Keyboard shortcuts hint */}
-            <div className="text-center text-gray-400 text-sm mt-6 absolute bottom-12 left-12">
+            <div className="text-center text-gray-400 text-sm mt-6 absolute bottom-16 left-12">
               Press <kbd className="px-2 py-1 bg-gray-100">Enter ↵</kbd> to continue, 
               <kbd className="px-2 py-1 bg-gray-100 ml-2">Alt + Backspace</kbd> to go back
             </div>

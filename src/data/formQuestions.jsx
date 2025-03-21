@@ -8,7 +8,7 @@ export const commonQuestions = [
     title: "What service are you interested in?",
     type: "service-select",
     isRequired: true,
-    options: ["Google Ads (PPC)", "SEO", "Website Build"]
+    options: ["SEO", "Website Build", "Google Ads (PPC)"]
   },
   // Question 1: Full name
   {
