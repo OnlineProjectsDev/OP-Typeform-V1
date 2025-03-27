@@ -44,25 +44,29 @@ const QuestionRenderer = ({
               {options.map(option => (
                 <div 
                   key={option}
-                  className={`cursor-pointer transition-all ${
+                  className={`transition-all ${
                     value === option 
                       ? "border-blue-600" 
                       : "border-gray-200 hover:border-blue-300"
                   }`}
-                  onClick={() => handleServiceSelect(option)}
                 >
                   <div className="relative group w-full flex">
-                    <h3 className={`font-[Delight] font-[600] text-[100px] leading-none transition-all duration-300 group-hover:translate-x-16 ${
-                      value === option
-                        ? "text-blue-700"
-                        : "text-white hover:text-blue-700 active:text-blue-700"
-                    }`}>
+                    <h3 
+                      className={`cursor-pointer font-[Delight] font-[600] text-[100px] leading-none transition-all duration-300 ${
+                        value === option
+                          ? "text-blue-700 translate-x-16"
+                          : "text-white hover:text-blue-700 active:text-blue-700 group-hover:translate-x-16"
+                      }`}
+                      onClick={() => handleServiceSelect(option)}
+                    >
                       {option}
                     </h3>
-                    <span className={`absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-8 opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300 text-5xl ${
-                      value === option ? "text-blue-700" : "text-white group-hover:text-blue-700"
-                    }`}>
-                      →
+                    <span className={`absolute left-0 top-1/2 transform -translate-y-1/2 ${
+                      value === option 
+                        ? "text-blue-700 opacity-100 translate-x-2" 
+                        : "text-white group-hover:text-blue-700 -translate-x-8 opacity-0 group-hover:opacity-100 group-hover:translate-x-2"
+                    } transition-all duration-300 text-5xl`}>
+                      -
                     </span>
                   </div>
                 </div>

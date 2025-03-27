@@ -28,9 +28,9 @@ export default function StepForm() {
   return (
     <div className="min-h-screen flex flex-col bg-[#191919]">
       {/* Progress bar */}
-      <div className="fixed top-0 left-0 right-0 h-1 bg-gray-200">
+      <div className="fixed top-0 left-0 right-0 h-1 bg-gray-400">
         <div 
-          className="h-full bg-[#7a7a7a] transition-all duration-300"
+          className="h-full bg-blue-700 transition-all duration-300"
           style={{ width: `${calculateProgress()}%` }}
         ></div>
       </div>
