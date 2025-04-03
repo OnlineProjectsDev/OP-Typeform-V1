@@ -30,7 +30,7 @@ export default function StepForm() {
       {/* Progress bar */}
       <div className="fixed top-0 left-0 right-0 h-1 bg-gray-400">
         <div 
-          className="h-full bg-blue-700 transition-all duration-300"
+          className="h-full bg-[#ff513f] transition-all duration-300"
           style={{ width: `${calculateProgress()}%` }}
         ></div>
       </div>
@@ -58,7 +58,7 @@ export default function StepForm() {
             />
             
             {/* Keyboard shortcuts hint */}
-            <div className="text-center text-gray-400 text-sm mt-6 absolute bottom-16 left-12">
+            <div className="text-center text-gray-400 text-sm mt-6 absolute bottom-16 left-12 hidden">
               Press <kbd className="px-2 py-1 bg-gray-100">Enter ↵</kbd> to continue, 
               <kbd className="px-2 py-1 bg-gray-100 ml-2">Alt + Backspace</kbd> to go back
             </div>

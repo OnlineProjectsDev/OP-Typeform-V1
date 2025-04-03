@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ServiceSelector from './ServiceSelector';
 import SEOForm from './SEOForm';
 import PPCForm from './PPCForm';
@@ -109,9 +109,18 @@ const Form = () => {
   };
 
   const handleSelectService = (service) => {
+    console.log("Service selected:", service); // Add this for debugging
     setSelectedService(service);
-    // Reset errors when changing service
-    setErrors({});
+    
+    // When changing services or deselecting, reset to step 1
+    if (service !== selectedService) {
+      setCurrentStep(1);
+    }
+    
+    // Reset errors when selecting a new service (not when deselecting)
+    if (service !== null) {
+      setErrors({});
+    }
   };
 
   if (submitted) {
@@ -139,12 +148,12 @@ const Form = () => {
 
   return (
     <div className="form-container">
-      {!selectedService ? (
-        <ServiceSelector 
-          onSelectService={handleSelectService} 
-          currentService={selectedService} 
-        />
-      ) : (
+      <ServiceSelector 
+        onSelectService={handleSelectService} 
+        currentService={selectedService} 
+      />
+      
+      {selectedService && (
         <form onSubmit={handleSubmit}>
           <div className="step-indicator">
             <div className={`step ${currentStep === 1 ? 'active' : ''}`}>Service Details</div>
@@ -153,16 +162,6 @@ const Form = () => {
           
           {currentStep === 1 && (
             <>
-              <div className="service-header">
-                <button 
-                  type="button" 
-                  className="back-button"
-                  onClick={() => setSelectedService(null)}
-                >
-                  ← Back to services
-                </button>
-              </div>
-              
               {selectedService === 'seo' && (
                 <SEOForm 
                   formData={formData} 

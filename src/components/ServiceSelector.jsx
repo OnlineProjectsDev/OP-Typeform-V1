@@ -12,14 +12,31 @@ const ServiceSelector = ({ onSelectService, currentService }) => {
       <h2>What service are you interested in?</h2>
       <div className="service-options">
         {services.map((service) => (
-          <div 
+          <button 
             key={service.id}
-            className={`service-card ${currentService === service.id ? 'selected' : ''}`}
-            onClick={() => onSelectService(service.id)}
+            type="button"
+            className={`custom-service-card ${currentService === service.id ? 'custom-selected' : ''}`}
+            onClick={() => {
+              // Toggle selection
+              if (currentService === service.id) {
+                onSelectService(null);
+              } else {
+                onSelectService(service.id);
+              }
+            }}
           >
-            <h3>{service.label}</h3>
-            <p>{service.description}</p>
-          </div>
+            <div className="service-card-content">
+              <h3>{service.label}</h3>
+              <p>{service.description}</p>
+            </div>
+            
+            {currentService === service.id && (
+              <div className="service-selected-indicator">
+                <span>✓</span>
+                <small>Click to deselect</small>
+              </div>
+            )}
+          </button>
         ))}
       </div>
     </div>

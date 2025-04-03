@@ -55,7 +55,7 @@ const QuestionRenderer = ({
                       className={`cursor-pointer font-[Delight] font-[600] text-[100px] leading-none transition-all duration-300 ${
                         value === option
                           ? "text-blue-700 translate-x-16"
-                          : "text-white hover:text-blue-700 active:text-blue-700 group-hover:translate-x-16"
+                          : "text-white hover:text-blue-700 active:text-blue-700"
                       }`}
                       onClick={() => handleServiceSelect(option)}
                     >
@@ -64,7 +64,7 @@ const QuestionRenderer = ({
                     <span className={`absolute left-0 top-1/2 transform -translate-y-1/2 ${
                       value === option 
                         ? "text-blue-700 opacity-100 translate-x-2" 
-                        : "text-white group-hover:text-blue-700 -translate-x-8 opacity-0 group-hover:opacity-100 group-hover:translate-x-2"
+                        : "text-white group-hover:text-blue-700 -translate-x-8 opacity-0 group-hover:opacity-100"
                     } transition-all duration-300 text-5xl`}>
                       -
                     </span>
